@@ -1,3 +1,7 @@
+output "relay_namespace_authorization_rules_id" {
+  description = "Map of id values across all relay_namespace_authorization_rules, keyed the same as var.relay_namespace_authorization_rules"
+  value       = { for k, v in azurerm_relay_namespace_authorization_rule.relay_namespace_authorization_rules : k => v.id }
+}
 output "relay_namespace_authorization_rules_listen" {
   description = "Map of listen values across all relay_namespace_authorization_rules, keyed the same as var.relay_namespace_authorization_rules"
   value       = { for k, v in azurerm_relay_namespace_authorization_rule.relay_namespace_authorization_rules : k => v.listen }
